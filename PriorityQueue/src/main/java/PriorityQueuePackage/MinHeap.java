@@ -31,6 +31,10 @@ public class MinHeap<T> extends PriorityQueue<T> {
         super(objects, myNewComparator);
     }
 
+
+    /**
+     * @see {@link MaxHeap#siftUp()} ()} for further explanation.
+     */
     @Override
     public void siftUp() {
         int currentPointer = getList().size() - 1;
@@ -46,6 +50,9 @@ public class MinHeap<T> extends PriorityQueue<T> {
         }
     }
 
+    /**
+     * @see {@link MaxHeap#siftDown()} for further explanation.
+     */
     @Override
     public void siftDown() {
         int pointer = 0;

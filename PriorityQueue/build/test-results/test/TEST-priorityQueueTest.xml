@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="priorityQueueTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-13T10:34:47" hostname="ELLOWORLD" time="0.041">
+<testsuite name="priorityQueueTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-08-13T10:36:37" hostname="ELLOWORLD" time="0.052">
   <properties/>
-  <testcase name="testingAgainJavaUtilPriorityQueueMaxHeap()" classname="priorityQueueTest" time="0.041"/>
+  <testcase name="testingAgainJavaUtilPriorityQueueMaxHeap()" classname="priorityQueueTest" time="0.031"/>
+  <testcase name="testingAgainJavaUtilPriorityQueueMinHeap()" classname="priorityQueueTest" time="0.002"/>
+  <testcase name="areEdgesCostsOrderdDescendingly()" classname="priorityQueueTest" time="0.001"/>
+  <testcase name="testFindThrows()" classname="priorityQueueTest" time="0.004"/>
+  <testcase name="maxHeapincreaseKeyTest()" classname="priorityQueueTest" time="0.001"/>
+  <testcase name="areEdgesCostsOrderdAscendingly()" classname="priorityQueueTest" time="0.001"/>
+  <testcase name="minHeapDecreaseThrowsException()" classname="priorityQueueTest" time="0.001"/>
+  <testcase name="minHeapIncreaseThrowsException()" classname="priorityQueueTest" time="0.001"/>
+  <testcase name="minHeapDecreaseKeyTest()" classname="priorityQueueTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

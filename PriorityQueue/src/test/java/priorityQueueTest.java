@@ -138,8 +138,8 @@ public class priorityQueueTest {
             results[i] = maxHeap.pop();
         }
 
-        System.out.println(Arrays.toString(results));
-        System.out.println(Arrays.toString(expected));
+//        System.out.println(Arrays.toString(results));
+//        System.out.println(Arrays.toString(expected));
 
         for (int i = 0; i < expected.length; i++) {
             if ((expected[i].compareTo(results[i])) == 0) {

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="priorityQueueTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-08-13T09:59:01" hostname="ELLOWORLD" time="0.083">
+<testsuite name="priorityQueueTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-08-13T10:03:59" hostname="ELLOWORLD" time="0.057">
   <properties/>
-  <testcase name="testingAgainJavaUtilPriorityQueueMinHeap()" classname="priorityQueueTest" time="0.044"/>
-  <testcase name="areEdgesCostsOrderdDescendingly()" classname="priorityQueueTest" time="0.002"/>
+  <testcase name="testingAgainJavaUtilPriorityQueueMinHeap()" classname="priorityQueueTest" time="0.032"/>
+  <testcase name="areEdgesCostsOrderdDescendingly()" classname="priorityQueueTest" time="0.001"/>
   <testcase name="testFindThrows()" classname="priorityQueueTest" time="0.006"/>
-  <testcase name="maxHeapincreaseKeyTest()" classname="priorityQueueTest" time="0.006"/>
-  <testcase name="areEdgesCostsOrderdAscendingly()" classname="priorityQueueTest" time="0.002"/>
+  <testcase name="maxHeapincreaseKeyTest()" classname="priorityQueueTest" time="0.005"/>
+  <testcase name="areEdgesCostsOrderdAscendingly()" classname="priorityQueueTest" time="0.001"/>
   <testcase name="minHeapDecreaseThrowsException()" classname="priorityQueueTest" time="0.002"/>
   <testcase name="minHeapIncreaseThrowsException()" classname="priorityQueueTest" time="0.002"/>
-  <testcase name="minHeapDecreaseKeyTest()" classname="priorityQueueTest" time="0.002"/>
+  <testcase name="minHeapDecreaseKeyTest()" classname="priorityQueueTest" time="0.001"/>
   <system-out><![CDATA[[12, 5, 4, 3, 2, 1]
 [12, 5, 4, 3, 2, 1]
 ]]></system-out>

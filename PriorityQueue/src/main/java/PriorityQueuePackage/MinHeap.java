@@ -33,7 +33,9 @@ public class MinHeap<T> extends PriorityQueue<T> {
 
 
     /**
-     * @see {@link MaxHeap#siftUp()} ()} for further explanation.
+     * After appending a new Object to the end of the list/Heap, it is compared with its parent; if the
+     * child is smaller than the parent, swap the child with the parent. repeat the process with the new
+     * parent
      */
     @Override
     public void siftUp() {
@@ -51,7 +53,9 @@ public class MinHeap<T> extends PriorityQueue<T> {
     }
 
     /**
-     * @see {@link MaxHeap#siftDown()} for further explanation.
+     * After pop(), the last added element is added to the list, to keep the MaxHeap invariant, we compare the
+     * root node, with its left and right child, and replace the head with the smaller child. the process is repeated
+     * until the root is now a leaf, or the heap invariant is resorted.
      */
     @Override
     public void siftDown() {

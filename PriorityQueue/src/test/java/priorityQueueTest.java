@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -193,6 +194,40 @@ public class priorityQueueTest {
         }
         //adding java.util heap into expected
         java.util.PriorityQueue<Integer> pq = new java.util.PriorityQueue<Integer>(List.of(integers));
+        for (int i = 0; i < expected.length; i++) {
+            expected[i] = pq.poll();
+        }
+        //comparing shallow equality with respect to the order of elements
+        for (int i = 0; i < expected.length; i++) {
+            if ((expected[i].compareTo(results[i])) == 0) {
+                continue;
+            } else {
+                areArraysShallowEqual = false;
+                break;
+            }
+        }
+
+        assertTrue(areArraysShallowEqual);
+    }
+
+
+    @Test
+    void testingAgainJavaUtilPriorityQueueMaxHeap() {
+        boolean areArraysShallowEqual = true;
+
+        Integer[] integers = new Integer[]{1, 2, 3, 0, 4, 5, 12, 21, -10, 123, 214, 123, -12};
+        Abstraction<Integer> abstraction = new Abstraction<Integer>(new MaxHeap<>(integers));
+        //contains my minHeap
+        Integer[] results = new Integer[abstraction.getSize()];
+        //contains java.util minHeap
+        Integer[] expected = new Integer[abstraction.getSize()];
+        //adding My minHeap into array result
+        for (int i = 0; i < integers.length; i++) {
+            results[i] = abstraction.pop();
+        }
+        //adding java.util heap into expected
+        java.util.PriorityQueue<Integer> pq = new java.util.PriorityQueue<Integer>(Collections.reverseOrder());
+        pq.addAll(List.of(integers) );
         for (int i = 0; i < expected.length; i++) {
             expected[i] = pq.poll();
         }

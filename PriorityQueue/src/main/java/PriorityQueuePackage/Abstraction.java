@@ -5,6 +5,7 @@
 package PriorityQueuePackage;
 
 public class Abstraction<T> {
+
     private final PriorityQueue<T> priorityQueue;
 
     public Abstraction(PriorityQueue<T> priorityQueue) {

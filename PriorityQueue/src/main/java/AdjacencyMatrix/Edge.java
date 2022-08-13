@@ -7,6 +7,7 @@ package AdjacencyMatrix;
 import java.util.Objects;
 
 public class Edge implements Comparable<Edge> {
+
     private int node;
     private int edge;
     private double cost;

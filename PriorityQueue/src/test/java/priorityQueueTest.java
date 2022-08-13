@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class priorityQueueTest {
+
     private Edge edge;
 
     private Edge[] testEdgeArray;

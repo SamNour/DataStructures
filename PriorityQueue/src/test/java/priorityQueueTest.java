@@ -20,8 +20,8 @@ public class priorityQueueTest {
 
     private Edge[] edgeArrayCostInc;
 
-
     private Abstraction<Edge> edgeMinHeap;
+
     private Abstraction<Edge> edgeMaxHeap;
 
     private Abstraction<Integer> maxHeap;
@@ -55,7 +55,6 @@ public class priorityQueueTest {
                 new Edge(0, 1, 0),
                 new Edge(0, 1, -1),
                 new Edge(1, 2, -12),
-
         };
 
         integers = new Integer[]{1, 2, 3, 4, 5, 6};

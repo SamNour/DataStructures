@@ -5,7 +5,6 @@ import PriorityQueuePackage.MinHeap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -227,7 +226,7 @@ public class priorityQueueTest {
         }
         //adding java.util heap into expected
         java.util.PriorityQueue<Integer> pq = new java.util.PriorityQueue<Integer>(Collections.reverseOrder());
-        pq.addAll(List.of(integers) );
+        pq.addAll(List.of(integers));
         for (int i = 0; i < expected.length; i++) {
             expected[i] = pq.poll();
         }

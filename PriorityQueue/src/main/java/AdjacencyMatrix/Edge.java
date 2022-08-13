@@ -1,6 +1,6 @@
 /***********************************************************************************
  * This class`s Only Purpose is for Testing, the prioritisation of edges Cost, in  *
- * an adjacency Matrix                                                             *
+ * an adjacency Matrix , for further implementations in weighted class                                                             *
  ***********************************************************************************/
 package AdjacencyMatrix;
 
@@ -53,6 +53,13 @@ public class Edge implements Comparable<Edge> {
         return node == edge1.node && edge == edge1.edge && Double.compare(edge1.cost, cost) == 0;
     }
 
+    /**
+     * to check the values of the priority queues, by comparing them with the expected value array
+     *
+     * @param a first edge array
+     * @param b second edge array
+     * @return true if both arrays are ordered according to the pre chosen heap invariant
+     */
     public boolean areAllArrtibutesOrderd(Edge[] a, Edge... b) {
         if (a.length != b.length) {
             return false;

@@ -62,6 +62,10 @@ public abstract class PriorityQueue<T> {
         }
     }
 
+    /**
+     * @param objects takes and argument as a list of comparable objects to be added to the Heap by the natural order
+     */
+
     public PriorityQueue(List<T> objects) {
         this.comparator = (e1, e2) -> ((Comparable<T>) e1).compareTo(e2);
         for (T item : objects) {
@@ -70,6 +74,10 @@ public abstract class PriorityQueue<T> {
 
     }
 
+    /**
+     * @param objects         adds a list of un comparable objects to the Heap.
+     * @param myNewComparator adding a user defined comparator to compare the objects
+     */
     public PriorityQueue(List<T> objects, Comparator<T> myNewComparator) {
         this.comparator = myNewComparator;
         for (T item : objects) {

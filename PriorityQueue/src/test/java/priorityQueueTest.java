@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class priorityQueueTest {
     private Edge edge;
+
     private Edge[] testEdgeArray;
 
     private Edge[] edgeArrayCostDec;
@@ -146,14 +147,13 @@ public class priorityQueueTest {
                 areArraysShallowEqual = false;
                 break;
             }
-
         }
+
         assertTrue(areArraysShallowEqual);
     }
 
     @Test
     void minHeapDecreaseThrowsException() {
-
         minHeap = new Abstraction<>(new MinHeap<>(integers));
         minHeap.decreaseKey(1, 0);
         assertThrows(IllegalArgumentException.class, () -> minHeap.decreaseKey(1, 24));
@@ -204,6 +204,7 @@ public class priorityQueueTest {
                 break;
             }
         }
+
         assertTrue(areArraysShallowEqual);
     }
 }

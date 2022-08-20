@@ -4,13 +4,22 @@
  ***********************************************************************************/
 package AdjacencyMatrix;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Edge implements Comparable<Edge> {
+public class Edge extends EdgeComparator {
 
     private int node;
     private int edge;
     private double cost;
+
+    private Comparator<Edge> eedgeComparator = new EdgeComparator();
+
+    public Comparator<Edge> getEedgeComparator() {
+        return eedgeComparator;
+    }
 
     public Edge() {
     }
@@ -19,6 +28,7 @@ public class Edge implements Comparable<Edge> {
         this.node = node;
         this.edge = edge;
         this.cost = cost;
+
     }
 
     @Override
@@ -26,15 +36,6 @@ public class Edge implements Comparable<Edge> {
         return Objects.hash(node, edge, cost);
     }
 
-    @Override
-    public int compareTo(Edge o) {
-        if (this.cost > o.cost) {
-            return 1;
-        } else if (this.cost < o.cost) {
-            return -1;
-        }
-        return 0;
-    }
 
     @Override
     public String toString() {
@@ -72,5 +73,41 @@ public class Edge implements Comparable<Edge> {
             }
         }
         return true;
+    }
+
+    public int getNode() {
+        return node;
+    }
+
+    public int getEdge() {
+        return edge;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+}
+class EdgeComparator implements Comparator<Edge> {
+
+
+    @Override
+    public int compare(Edge edge, Edge t1) {
+        return Comparator.comparing(Edge::getNode).
+                thenComparing(Edge::getCost).
+                compare(edge,t1);
+    }
+
+    public static void main(String[] args) {
+       Edge[] edgeArrayCostDec = new Edge[]{
+                new Edge(1, 1, 3),
+                new Edge(0, 1, 1),
+                new Edge(0, 1, 0),
+                new Edge(0, 1, -1),
+                new Edge(1, 2, -12),
+        };
+        Comparator<Edge> edgeComparator = new EdgeComparator();
+        ArrayList<Edge> arrayList = new ArrayList<>(java.util.List.of(edgeArrayCostDec));
+        Collections.sort(arrayList,edgeComparator);
+        System.out.println(arrayList);
     }
 }

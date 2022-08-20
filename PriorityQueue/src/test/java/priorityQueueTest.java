@@ -5,11 +5,12 @@ import PriorityQueuePackage.MinHeap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class priorityQueueTest {
@@ -32,10 +33,11 @@ public class priorityQueueTest {
 
     private Integer[] integers;
 
+    private Comparator edgeComparator;
     @BeforeEach
     void setup() {
         edge = new Edge();
-
+        edgeComparator = edge.getEedgeComparator();
         testEdgeArray = new Edge[]{
                 new Edge(0, 1, 0),
                 new Edge(0, 1, 1),
@@ -62,6 +64,21 @@ public class priorityQueueTest {
         integers = new Integer[]{1, 2, 3, 4, 5, 6};
     }
 
+    @Test
+    void arrangedByNodeThenCoseDijkstra(){
+        ArrayList<Edge> edges = new ArrayList<>(List.of(edgeArrayCostInc));
+        edges.sort(edgeComparator);
+        System.out.println(edges);
+        ArrayList<Edge> evaluatedList = new ArrayList<>(List.of( edgeArrayCostInc = new Edge[]{
+                new Edge(0, 1, -1),
+                new Edge(0, 1, 0),
+                new Edge(0, 1, 1),
+                new Edge(1, 2, -12),
+                new Edge(1, 2, 3),
+        }));
+
+        assertTrue(edges.containsAll(evaluatedList));
+    }
 
     @Test
     void areEdgesCostsOrderdAscendingly() {

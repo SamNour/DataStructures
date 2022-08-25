@@ -4,18 +4,16 @@
  ***********************************************************************************/
 package AdjacencyMatrix;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Objects;
 
 public class Edge extends EdgeComparator {
 
-    private int node;
-    private int edge;
+    private int from;
+    private int to;
     private double cost;
 
-    private Comparator<Edge> eedgeComparator = new EdgeComparator();
+    private final Comparator<Edge> eedgeComparator = new EdgeComparator();
 
     public Comparator<Edge> getEedgeComparator() {
         return eedgeComparator;
@@ -24,24 +22,24 @@ public class Edge extends EdgeComparator {
     public Edge() {
     }
 
-    public Edge(int node, int edge, double cost) {
-        this.node = node;
-        this.edge = edge;
+    public Edge(int from, int to, double cost) {
+        this.from = from;
+        this.to = to;
         this.cost = cost;
 
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(node, edge, cost);
+        return Objects.hash(from, to, cost);
     }
 
 
     @Override
     public String toString() {
         return "Edge{" +
-                "node=" + node +
-                ", edge=" + edge +
+                "node=" + from +
+                ", edge=" + to +
                 ", cost=" + cost +
                 '}';
     }
@@ -51,7 +49,7 @@ public class Edge extends EdgeComparator {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Edge edge1 = (Edge) o;
-        return node == edge1.node && edge == edge1.edge && Double.compare(edge1.cost, cost) == 0;
+        return from == edge1.from && to == edge1.to && Double.compare(edge1.cost, cost) == 0;
     }
 
     /**
@@ -66,21 +64,21 @@ public class Edge extends EdgeComparator {
             return false;
         }
         for (int i = 0; i < a.length; i++) {
-            if (a[i].node != b[i].node ||
+            if (a[i].from != b[i].from ||
                     a[i].cost != b[i].cost ||
-                    a[i].edge != b[i].edge) {
+                    a[i].to != b[i].to) {
                 return false;
             }
         }
         return true;
     }
 
-    public int getNode() {
-        return node;
+    public int getFrom() {
+        return from;
     }
 
-    public int getEdge() {
-        return edge;
+    public int getTo() {
+        return to;
     }
 
     public double getCost() {

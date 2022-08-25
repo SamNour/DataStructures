@@ -20,7 +20,9 @@ public abstract class PriorityQueue<T> {
      * class, or to be overridden by a user specified comparator, or to be used if the Objects need to be compared
      * does not implement the comparable interface and need their own compareTo method.
      */
-    private final Comparator<? super T> comparator;
+    private final Comparator<? super T> comparator;//Lower bound wild card, T or any supertype of T ex: Integer or Number
+    //PECS
+    Comparable<T> comparable;
 
     /**
      * The Empty Constructor used when, the input Objects are comparable, to compare them in the Natural Order.
@@ -71,7 +73,6 @@ public abstract class PriorityQueue<T> {
         for (T item : objects) {
             add(item);
         }
-
     }
 
     /**
@@ -106,6 +107,7 @@ public abstract class PriorityQueue<T> {
         siftUp();
     }
 
+
     /**
      * Substitutes the Heap`s root with the last added element in the heap, then removes the Root.
      * siftDown is then used to keep the Heap Invariant.
@@ -131,9 +133,9 @@ public abstract class PriorityQueue<T> {
         return list;
     }
 
-    protected Comparator<? super T> getComparator() {
-        return comparator;
-    }
+//    protected Comparator<? super T> getComparator() {
+//        return comparator;
+//    }
 
 
     /**
@@ -184,4 +186,25 @@ public abstract class PriorityQueue<T> {
             throw new IllegalArgumentException("List does not contain : " + object);
         }
     }
+
+    public Comparator<? super T> getComparator() {
+        return comparator;
+    }
+
+    public static void main(String[] args) {
+        Comparator<Number> x = new Comparator<Number>() {
+            @Override
+            public int compare(Number number, Number t1) {
+                return 0;
+            }
+
+            @Override
+            public boolean equals(Object o) {
+                return false;
+            }
+        };
+        PriorityQueue<Number> P = new MinHeap<>(x);
+    }
+
+
 }

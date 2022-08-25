@@ -10,6 +10,7 @@ import java.util.List;
 public class MaxHeap<T> extends PriorityQueue<T> {
 
     public MaxHeap() {
+
     }
 
     public MaxHeap(Comparator<T> myNewComparator) {
